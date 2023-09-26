@@ -1,0 +1,107 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(1, 77, 175);
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(1, 77, 175, 1) 50%,
+    rgba(0, 53, 95, 1) 100%
+  );
+  flex-direction: column;
+}
+
+.loginPage .sectionCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background: #f8f8f8;
+  position: relative;
+}
+
+.loginPage .sectionCon > * {
+  height: 100%;
+}
+
+.loginPage .sectionCon .infoLeft {
+  background-color: #378ff9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 3rem 0 3rem;
+}
+
+.loginPage .sectionCon .infoLeft .headingCon {
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.loginPage .sectionCon .infoLeft .headingCon h2 {
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.loginPage .sectionCon .infoLeft .highlightsCon {
+  display: flex;
+  flex-direction: column;
+  color: #f0f0f0;
+  margin-top: 2rem;
+  gap: 1.1rem;
+}
+
+.loginPage .sectionCon .infoLeft .highlightsCon span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.loginPage .sectionCon .infoLeft .highlightsCon span svg {
+  background: white;
+  color: black;
+  border-radius: 2rem;
+  padding: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.loginPage .sectionCon .formRight {
+  display: flex;
+  padding: 3rem;
+  width: 29rem;
+}
+
+.loginPage .sectionCon .dontHaveAccount {
+  align-self: flex-end;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  height: auto;
+  color: #f0f0f0;
+  margin-top: 0.5rem;
+}
+
+.loginPage .sectionCon .dontHaveAccount a {
+  color: #378ff9;
+}
+
+@media screen and (max-width: 775px) {
+  .loginPage .sectionCon {
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .loginPage .sectionCon .infoLeft {
+    width: 100%;
+  }
+  .loginPage .sectionCon .formRight {
+    width: 100%;
+  }
+  .loginPage .sectionCon .dontHaveAccount {
+    top: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .loginPage .sectionCon .dontHaveAccount a {
+    color: white;
+  }
+}
