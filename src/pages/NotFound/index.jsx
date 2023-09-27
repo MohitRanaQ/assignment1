@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 
-import styles from "./notfound.css";
+import styles from "./notfound.module.css";
 
 const NotFound = () => {
   return (

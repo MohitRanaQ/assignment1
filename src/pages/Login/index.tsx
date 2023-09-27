@@ -30,7 +30,10 @@ const Login = () => {
     const fetchData = async () => {
       const db = getFirestore(app);
       const querySnapshot = await getDocs(collection(db, "users"));
-      const data = querySnapshot.docs.map((doc) => doc.data());
+       const data = querySnapshot.docs.map((doc) => ({
+         ...doc.data(),
+         id: doc.id,
+       }));
       setAllData(data);
     };
 
@@ -63,6 +66,7 @@ const Login = () => {
     if (filteredArray.length > 0) {
       localStorage.setItem("userName", filteredArray[0].userName);
       localStorage.setItem("name", filteredArray[0].firstName);
+      localStorage.setItem("userId", filteredArray[0].id);
       navigate("/dashboard");
     }
     if (filteredArray.length === 0) {

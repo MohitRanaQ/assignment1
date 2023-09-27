@@ -1,0 +1,50 @@
+.main{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    
+}
+.card h2{
+    padding: 10px;
+}
+.div{
+    border-top: none;
+    border: solid 0.8px rgb(178, 178, 178);
+}
+.form{
+    display:flex ;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 15px 0px;
+    margin-left: 20px;
+}
+.form div{
+    display: grid;
+    grid-template-columns:200px 1fr ;
+    width: 100%;
+        align-items: center;
+   
+    
+}
+
+.main div label{
+    font-size: 20px;
+    font-weight: 600;
+}
+.buttonDiv{
+display: flex !important;
+width: 100%;
+align-items: center;
+
+gap: 50px;
+
+}

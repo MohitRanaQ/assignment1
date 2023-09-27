@@ -2,13 +2,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 //@ts-nocheck
 
-import { Button, TextField } from "@mui/material";
+import { Button, Divider, TextField } from "@mui/material";
 import { collection, doc, getDocs, getFirestore, updateDoc } from "firebase/firestore";
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import app from "../firebase";
-
+import styles from "./edit.module.css"
+import { Card } from '@mui/material';
 
 function Edit() {
   const { handleSubmit, control, setValue } = useForm({
@@ -66,52 +67,63 @@ updateDoc(userDoc, data)
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>First Name:</label>
-        <Controller
-          name='firstName'
-          control={control}
-          render={({ field }) => <TextField {...field} />}
-        />
-      </div>
-      <div>
-        <label>Middle Name:</label>
-        <Controller
-          name='middleName'
-          control={control}
-          render={({ field }) => <TextField {...field} />}
-        />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <Controller
-          name='lastName'
-          control={control}
-          render={({ field }) => <TextField {...field} />}
-        />
-      </div>
-      <div>
-        <label>Email:</label>
-        <Controller
-          name='userName'
-          control={control}
-          render={({ field }) => <TextField {...field} />}
-        />
-      </div>
-
-      <Button variant='contained' color='primary' type='submit'>
-        Submit
-      </Button>
-      <Button
-        variant='contained'
-        color='primary'
-        type='button'
-        onClick={() => goBack()}
-      >Cancel
+    <div className={styles.main}>
+      {" "}
+      <Card className={styles.card}>
         {" "}
-      </Button>
-    </form>
+        <h2>Edit User</h2>
+        <Divider />
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+          <div>
+            <label>First Name</label>
+            <Controller
+              name='firstName'
+              control={control}
+              render={({ field }) => <TextField {...field} />}
+            />
+          </div>
+          <div>
+            <label>Middle Name</label>
+            <Controller
+              name='middleName'
+              control={control}
+              render={({ field }) => <TextField {...field} />}
+            />
+          </div>
+          <div>
+            <label>Last Name</label>
+            <Controller
+              name='lastName'
+              control={control}
+              render={({ field }) => <TextField {...field} />}
+            />
+          </div>
+          <div>
+            <label>User Name</label>
+            <Controller
+              name='userName'
+              control={control}
+              render={({ field }) => <TextField {...field} />}
+            />
+          </div>
+
+          <div className={styles.buttonDiv}>
+            {" "}
+            <Button sx={{width:"175px"}} variant='contained' color='primary' type='submit'>
+            Submit
+            </Button>
+            <Button sx={{width:"175px"}} 
+              variant='contained'
+              color='primary'
+              type='button'
+              onClick={() => goBack()}
+            >
+              Cancel{" "}
+            </Button>
+          </div>
+        </form>
+      </Card>
+    </div>
   );
 }
 export default Edit;
